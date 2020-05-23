@@ -59,7 +59,14 @@ import thaumcraft.api.*;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 
-@Mod(modid = TwilightForestMod.ID, name = "The Twilight Forest", version = TwilightForestMod.VERSION)
+@Mod(
+		modid = TwilightForestMod.ID,
+		name = "The Twilight Forest",
+		version = TwilightForestMod.VERSION,
+		
+		// Unmodified version accepted
+		acceptableRemoteVersions = "2.3.7"
+)
 public class TwilightForestMod {
 	
 	public static final String ID = "TwilightForest";
