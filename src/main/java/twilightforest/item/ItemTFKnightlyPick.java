@@ -22,8 +22,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemTFKnightlyPick extends ItemPickaxe {
 
+	@SuppressWarnings("unused")
 	private static final int BONUS_DAMAGE = 2;
+	@SuppressWarnings("unused")
 	private EntityPlayer bonusDamagePlayer;
+	@SuppressWarnings("unused")
 	private Entity bonusDamageEntity;
 	private float damageVsEntity;
 
@@ -122,7 +125,7 @@ public class ItemTFKnightlyPick extends ItemPickaxe {
      */
     public Multimap getItemAttributeModifiers()
     {
-        Multimap multimap = super.getItemAttributeModifiers();
+        Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers();
         // remove old damage value
         multimap.removeAll(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName());
         // add new one

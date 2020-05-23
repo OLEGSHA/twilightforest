@@ -46,6 +46,7 @@ public class ItemTFOreMeter extends ItemTF {
 		return super.onItemRightClick(par1ItemStack, world, player);
 	}
 
+	@SuppressWarnings("unused")
 	private void countOreInChunk(EntityPlayer player, World world, int useX, int useZ) {
 		int chunkX = useX >> 4;
 		int chunkZ = useZ >> 4;
@@ -94,11 +95,13 @@ public class ItemTFOreMeter extends ItemTF {
 		int countDiamond = 0;
 		int countLapis = 0;
 		int countRedstone = 0;
+		@SuppressWarnings("unused")
 		int countExposedDiamond = 0;
 
 		int countRoots = 0;
 		int countOreRoots = 0;
 
+		@SuppressWarnings("unused")
 		int total = 0;
 
 

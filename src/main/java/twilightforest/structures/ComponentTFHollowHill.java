@@ -65,7 +65,6 @@ public class ComponentTFHollowHill extends StructureTFComponent {
 	/**
 	 * Add on any other components we need.  In this case we add the maze below the hill
 	 */
-	@SuppressWarnings("rawtypes")
 	@Override
 	public void buildComponent(StructureComponent structurecomponent, List list, Random random) {
 		

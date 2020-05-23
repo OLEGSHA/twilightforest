@@ -3,9 +3,7 @@ package twilightforest.biomes;
 import java.util.Random;
 
 import twilightforest.block.TFBlocks;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
@@ -19,6 +17,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class TFGenHugeWaterLily extends WorldGenerator
 {
 
+	@SuppressWarnings("unused")
 	private Random rand = new Random();
 
 

@@ -40,6 +40,7 @@ public class BlockTFHugeLilyPad extends BlockBush {
 
 		this.setCreativeTab(TFItems.creativeTab);
 		
+		@SuppressWarnings("unused")
 		Item lily;
 
 	}
@@ -65,7 +66,6 @@ public class BlockTFHugeLilyPad extends BlockBush {
 	/**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs, List par3List)
     {
@@ -162,7 +162,8 @@ public class BlockTFHugeLilyPad extends BlockBush {
     	
 		int orient = meta >> 2;
 		int piece = meta & 3;
-		
+
+		@SuppressWarnings("unused")
 		int display = (piece + orient) % 4;
     	
     	if (!this.isSelfDestructing  && !canBlockStay(world, x, y, z)) {

@@ -3,18 +3,14 @@ package twilightforest.entity;
 import java.util.List;
 
 import twilightforest.item.ItemTFChainBlock;
-import twilightforest.item.TFItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityMultiPart;
 import net.minecraft.entity.boss.EntityDragonPart;
-import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
@@ -279,7 +275,7 @@ public class EntityTFChainBlock extends EntityThrowable implements IEntityMultiP
         
         // on the client, if we are not attached, assume we have just spawned, and attach to the player
         if (this.worldObj.isRemote && !this.isAttached) {
-            List nearbyEntities = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.addCoord(-this.motionX, -this.motionY, -this.motionZ).expand(2.0D, 2.0D, 2.0D));
+            List<?> nearbyEntities = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.addCoord(-this.motionX, -this.motionY, -this.motionZ).expand(2.0D, 2.0D, 2.0D));
             for (int i = 0; i < nearbyEntities.size(); ++i) {
                 Entity nearby = (Entity)nearbyEntities.get(i);
                 

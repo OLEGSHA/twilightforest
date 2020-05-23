@@ -61,6 +61,7 @@ public class GenLayerTFThornBorder extends GenLayer {
 	/**
 	 * Returns true if the center biome is the first specified biome and any of the surrounding biomes are the second bioms
 	 */
+	@SuppressWarnings("unused")
 	private boolean onBorder(int biomeID, int biomeID2, int center, int right, int left, int up, int down) {
 		if (center != biomeID) {
 			return false;

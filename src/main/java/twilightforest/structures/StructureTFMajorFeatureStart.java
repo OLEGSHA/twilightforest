@@ -71,7 +71,7 @@ public class StructureTFMajorFeatureStart extends StructureStart {
     
     public StructureTFMajorFeatureStart() {}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	public StructureTFMajorFeatureStart(World world, Random rand, int chunkX, int chunkZ) 
 	{
         StructureStrongholdPieces.prepareStructurePieces();
@@ -196,7 +196,6 @@ public class StructureTFMajorFeatureStart extends StructureStart {
 	/**
 	 * Move the whole structure up or down
 	 */
-    @SuppressWarnings("unchecked")
 	protected void moveToAvgGroundLevel(World world, int x, int z)
     {
     	if (world.getWorldChunkManager() instanceof TFWorldChunkManager)

@@ -1,7 +1,5 @@
 package twilightforest.structures;
 
-import java.awt.Rectangle;
-import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -10,19 +8,9 @@ import java.util.Random;
 
 import twilightforest.TFFeature;
 import twilightforest.biomes.TFBiomeBase;
-import twilightforest.block.BlockTFTowerDevice;
 import twilightforest.block.TFBlocks;
-import twilightforest.structures.TFFinalCastlePieces.EntranceTower;
-import twilightforest.structures.TFFinalCastlePieces.MazeTower13;
-import twilightforest.structures.icetower.ComponentTFIceTowerStairs;
-import twilightforest.structures.icetower.StructureDecoratorIceTower;
-import twilightforest.structures.lichtower.ComponentTFTowerBridge;
 import twilightforest.structures.lichtower.ComponentTFTowerWing;
-import twilightforest.structures.minotaurmaze.ComponentTFMazeUpperEntrance;
-import twilightforest.structures.stronghold.StructureTFDecoratorStronghold;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockStainedGlassPane;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChunkCoordinates;
@@ -31,7 +19,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
-import net.minecraft.world.gen.structure.StructureNetherBridgePieces;
 
 public class TFFinalCastlePieces {
 
@@ -99,7 +86,6 @@ public class TFFinalCastlePieces {
 			}
     	}
 
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		// add foundation
@@ -156,7 +142,8 @@ public class TFFinalCastlePieces {
      		DungeonSteps steps3 = steps2.buildMoreStepsTowards(parent, list, rand, 3);
 
     		// start dungeon
-    		DungeonEntrance dRoom = steps3.buildLevelUnder(parent, list, rand, 1);
+    		@SuppressWarnings("unused")
+			DungeonEntrance dRoom = steps3.buildLevelUnder(parent, list, rand, 1);
     		
     		// mural on front
 			ChunkCoordinates mc = this.offsetTowerCCoords(48, 23, 25, 1, 0);
@@ -175,9 +162,9 @@ public class TFFinalCastlePieces {
     	/**
     	 * Build a side tower, then tell it to start building towards the destination
     	 */
-    	private void buildTowerMaze(List list, Random rand, int x, int y, int z, int howFar, int direction, int type, ChunkCoordinates dest) {
+    	private void buildTowerMaze(List<StructureComponent> list, Random rand, int x, int y, int z, int howFar, int direction, int type, ChunkCoordinates dest) {
     		// duplicate list
-    		LinkedList before = new LinkedList(list);
+    		LinkedList<StructureComponent> before = new LinkedList<StructureComponent>(list);
     		
     		// build
 			ChunkCoordinates tc = this.offsetTowerCCoords(x, y, z, howFar, direction);
@@ -205,8 +192,8 @@ public class TFFinalCastlePieces {
     		
     	}
     	
-		private boolean isMazeComplete(List list, int type) {
-	        Iterator iterator = list.iterator();
+		private boolean isMazeComplete(List<StructureComponent> list, int type) {
+	        Iterator<StructureComponent> iterator = list.iterator();
 	        StructureComponent structurecomponent;
 
 	        do
@@ -396,7 +383,6 @@ public class TFFinalCastlePieces {
 
 		}
 
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -439,7 +425,6 @@ public class TFFinalCastlePieces {
 		}
 		
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		this.deco = new StructureTFDecoratorCastle();
@@ -471,6 +456,7 @@ public class TFFinalCastlePieces {
 	}
 
 	public static class Foundation48 extends StructureTFComponent {
+		@SuppressWarnings("unused")
 		private int groundLevel = -1;
 		
 		public Foundation48() {
@@ -484,7 +470,6 @@ public class TFFinalCastlePieces {
 	
 		}
 		
-		@SuppressWarnings({ "unchecked", "rawtypes" })
 		@Override
 		public void buildComponent(StructureComponent parent, List list, Random rand) {
 			if (parent != null && parent instanceof StructureTFComponent) {
@@ -556,7 +541,6 @@ public class TFFinalCastlePieces {
     		this.boundingBox = StructureTFComponent.getComponentToAddBoundingBox2(x, y, z, -2, -15, -3, 5, 15, 20, rotation);
     	}
     	
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -567,7 +551,7 @@ public class TFFinalCastlePieces {
     	/**
     	 * build more steps towards the specified direction
     	 */
-    	public DungeonSteps buildMoreStepsTowards(StructureComponent parent, List list, Random rand, int rotation) {
+    	public DungeonSteps buildMoreStepsTowards(StructureComponent parent, List<StructureComponent> list, Random rand, int rotation) {
     		
     		int direction = (rotation + this.coordBaseMode) % 4;
     		
@@ -607,7 +591,7 @@ public class TFFinalCastlePieces {
     	/**
     	 * build a new level under the exit
     	 */
-    	public DungeonEntrance buildLevelUnder(StructureComponent parent, List list, Random rand, int level) {
+    	public DungeonEntrance buildLevelUnder(StructureComponent parent, List<StructureComponent> list, Random rand, int level) {
     		// find center of landing
     		int dx = this.getXWithOffset(2, 19);
     		int dy = this.getYWithOffset(-7);
@@ -624,7 +608,7 @@ public class TFFinalCastlePieces {
     	/**
     	 * build the boss room
     	 */
-    	public DungeonForgeRoom buildBossRoomUnder(StructureComponent parent, List list, Random rand) {
+    	public DungeonForgeRoom buildBossRoomUnder(StructureComponent parent, List<StructureComponent> list, Random rand) {
     		// find center of landing
     		int dx = this.getXWithOffset(2, 19);
     		int dy = this.getYWithOffset(-31);
@@ -666,7 +650,6 @@ public class TFFinalCastlePieces {
 			super(rand, i, x, y, z, direction, level);
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		this.deco = new StructureTFDecoratorCastle();
@@ -719,7 +702,6 @@ public class TFFinalCastlePieces {
 		}
 		
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -801,7 +783,6 @@ public class TFFinalCastlePieces {
 			this.boundingBox = StructureTFComponent.getComponentToAddBoundingBox(x, y, z, -15, 0, -15, this.size - 1, this.height - 1, this.size - 1, 0);
 		}
     	
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -846,7 +827,7 @@ public class TFFinalCastlePieces {
 			} else {}
 		}
 
-		protected boolean addDungeonRoom(StructureComponent parent, List list, Random rand, int rotation, int level) {
+		protected boolean addDungeonRoom(StructureComponent parent, List<StructureComponent> list, Random rand, int rotation, int level) {
 			rotation = (this.coordBaseMode + rotation) % 4;
 			
 			ChunkCoordinates rc = this.getNewRoomCoords(rand, rotation);
@@ -871,7 +852,7 @@ public class TFFinalCastlePieces {
 			}
 		}
 
-		protected boolean addDungeonExit(StructureComponent parent, List list, Random rand, int rotation) {
+		protected boolean addDungeonExit(StructureComponent parent, List<StructureComponent> list, Random rand, int rotation) {
 
 			//TODO: check if we are sufficiently near the castle center
 
@@ -999,7 +980,6 @@ public class TFFinalCastlePieces {
 
     	}
     	
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -1111,7 +1091,6 @@ public class TFFinalCastlePieces {
 
     	}
     	
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -1433,7 +1412,6 @@ public class TFFinalCastlePieces {
     	}
 
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -1454,7 +1432,7 @@ public class TFFinalCastlePieces {
     	/**
     	 * Build more components towards the destination
     	 */
-    	public void buildTowards(StructureComponent parent, List list, Random rand, ChunkCoordinates dest) {
+    	public void buildTowards(StructureComponent parent, List<StructureComponent> list, Random rand, ChunkCoordinates dest) {
     		// regular building first, adds roof/foundation
     		this.buildComponent(parent, list, rand);
 
@@ -1497,7 +1475,7 @@ public class TFFinalCastlePieces {
 
     	}
 
-		protected void buildNonCriticalTowers(StructureComponent parent, List list, Random rand) {
+		protected void buildNonCriticalTowers(StructureComponent parent, List<StructureComponent> list, Random rand) {
 			// pick a random direction
 			int dir = rand.nextInt(4);
 
@@ -1578,7 +1556,7 @@ public class TFFinalCastlePieces {
 			}
 		}
 
-		private boolean buildContinueTowerTowards(List list, Random rand, ChunkCoordinates dest, int direction, int howFar) {
+		private boolean buildContinueTowerTowards(List<StructureComponent> list, Random rand, ChunkCoordinates dest, int direction, int howFar) {
 			ChunkCoordinates opening = this.getValidOpeningCC(rand, direction);
 			
 			// adjust opening towards dest.posY if we are getting close to dest
@@ -1647,7 +1625,7 @@ public class TFFinalCastlePieces {
 		}
 		
 		
-		protected boolean buildDamagedTower(List list, Random rand, int direction) {
+		protected boolean buildDamagedTower(List<StructureComponent> list, Random rand, int direction) {
 			ChunkCoordinates opening = this.getValidOpeningCC(rand, direction);
 			
 			direction += this.coordBaseMode;
@@ -1708,7 +1686,7 @@ public class TFFinalCastlePieces {
 			return openY;
 		}
 
-		private boolean buildEndTowerTowards(List list, Random rand, ChunkCoordinates dest, int direction, int howFar) {
+		private boolean buildEndTowerTowards(List<StructureComponent> list, Random rand, ChunkCoordinates dest, int direction, int howFar) {
 			ChunkCoordinates opening = this.getValidOpeningCC(rand, direction);
 			
 			// adjust opening towards dest.posY
@@ -1950,7 +1928,6 @@ public class TFFinalCastlePieces {
 			super(rand, i, x, y, z, 3, 2, 0, direction);
 		}
 	
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2004,7 +1981,7 @@ public class TFFinalCastlePieces {
 			bridge.buildComponent(this, list, rand);
 		}
 
-		private boolean buildSideTower(List list, Random rand, int middleFloors, int direction, int howFar) {
+		private boolean buildSideTower(List<StructureComponent> list, Random rand, int middleFloors, int direction, int howFar) {
 			ChunkCoordinates opening = this.getValidOpeningCC(rand, direction);
 			
 			direction += this.coordBaseMode;
@@ -2084,7 +2061,6 @@ public class TFFinalCastlePieces {
     		addOpening(0, 1, size / 2, 2);		
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2116,7 +2092,6 @@ public class TFFinalCastlePieces {
 //    		addOpening(size / 2, 1, 12, 3);		
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2167,7 +2142,6 @@ public class TFFinalCastlePieces {
 			this.boundingBox = StructureTFComponent.getComponentToAddBoundingBox2(x, y, z, 0, -1, -5, 12, 0, 12, direction);
 		}
 	
-		@SuppressWarnings({ "rawtypes" })
 		@Override
 		public void buildComponent(StructureComponent parent, List list, Random rand) {
 			if (parent != null && parent instanceof StructureTFComponent) {
@@ -2231,7 +2205,6 @@ public class TFFinalCastlePieces {
     		addOpening(0, 9, size / 2, 2);		
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2296,7 +2269,6 @@ public class TFFinalCastlePieces {
 			super(rand, i, x, y, z, 2, direction);  //TODO: change rune type
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2460,7 +2432,6 @@ public class TFFinalCastlePieces {
 			super(rand, i, x, y, z, direction);
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2532,7 +2503,6 @@ public class TFFinalCastlePieces {
 
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2590,7 +2560,6 @@ public class TFFinalCastlePieces {
 
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2668,7 +2637,6 @@ public class TFFinalCastlePieces {
 		}
 
 
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2726,7 +2694,6 @@ public class TFFinalCastlePieces {
 
 		}
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2776,7 +2743,6 @@ public class TFFinalCastlePieces {
 		}
 		
 		
-    	@SuppressWarnings({ "unchecked", "rawtypes" })
     	@Override
     	public void buildComponent(StructureComponent parent, List list, Random rand) {
     		if (parent != null && parent instanceof StructureTFComponent) {
@@ -2871,7 +2837,6 @@ public class TFFinalCastlePieces {
 	
 		}
 		
-		@SuppressWarnings({ "unchecked", "rawtypes" })
 		@Override
 		public void buildComponent(StructureComponent parent, List list, Random rand) {
 			if (parent != null && parent instanceof StructureTFComponent) {
@@ -3104,7 +3069,8 @@ public class TFFinalCastlePieces {
 	        }
 	
 	        // how tall are we?
-	        int height = this.boundingBox.maxY - this.groundLevel;
+	        @SuppressWarnings("unused")
+			int height = this.boundingBox.maxY - this.groundLevel;
 	        
 	        int mid = 16;
 	        int low = 32;

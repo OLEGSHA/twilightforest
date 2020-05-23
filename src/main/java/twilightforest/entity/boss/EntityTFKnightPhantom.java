@@ -547,7 +547,6 @@ public class EntityTFKnightPhantom extends EntityFlying implements IMob
     }
 
 
-	@SuppressWarnings("unchecked")
 	private List<EntityTFKnightPhantom> getNearbyKnights() {
 		List<EntityTFKnightPhantom> nearbyKnights = worldObj.getEntitiesWithinAABB(EntityTFKnightPhantom.class, AxisAlignedBB.getBoundingBox(this.posX, this.posY, this.posZ, this.posX + 1, this.posY + 1, this.posZ + 1).expand(32.0D, 8.0D, 32.0D));
 		return nearbyKnights;

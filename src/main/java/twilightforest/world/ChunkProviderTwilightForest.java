@@ -378,7 +378,8 @@ public class ChunkProviderTwilightForest implements IChunkProvider {
 	 */
     public void replaceBlocksForBiome(int chunkX, int chunkZ, Block[] blockStorage, byte[] metaStorage, BiomeGenBase[] biomes)
     {
-        ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, chunkX, chunkZ, blockStorage, biomes);
+        @SuppressWarnings("deprecation")
+		ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, chunkX, chunkZ, blockStorage, biomes);
         MinecraftForge.EVENT_BUS.post(event);
         if (event.getResult() == Result.DENY) return;
 
@@ -652,6 +653,7 @@ public class ChunkProviderTwilightForest implements IChunkProvider {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void deformTerrainForTrollCloud(Block[] storage, byte[] metaStorage, TFFeature nearFeature, int x, int z, int dx, int dz) {
 		int y = 164;
 		
@@ -1028,7 +1030,6 @@ public class ChunkProviderTwilightForest implements IChunkProvider {
 	 * Twilight Forest varient! First check features, then only if we're not in
 	 * a feature, check the biome.
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, int mapX, int mapY, int mapZ) {
 		// are the specified coordinates precicely in a feature?

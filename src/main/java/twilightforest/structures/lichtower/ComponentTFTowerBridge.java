@@ -30,7 +30,6 @@ public class ComponentTFTowerBridge extends ComponentTFTowerWing {
 	}
 
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		

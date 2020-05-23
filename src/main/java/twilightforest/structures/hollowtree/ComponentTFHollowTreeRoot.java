@@ -31,7 +31,8 @@ public class ComponentTFHollowTreeRoot extends ComponentTFHollowTreeMedBranch  {
 		// offset bounding box to average ground level
         if (this.groundLevel < 0)
         {
-        	int rootHeight = this.boundingBox.maxY - this.boundingBox.minY;
+        	@SuppressWarnings("unused")
+			int rootHeight = this.boundingBox.maxY - this.boundingBox.minY;
         	
             this.groundLevel = this.getSampledDirtLevel(world, sbb);
 

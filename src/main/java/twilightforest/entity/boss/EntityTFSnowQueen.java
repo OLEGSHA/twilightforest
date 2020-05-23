@@ -343,7 +343,6 @@ public class EntityTFSnowQueen extends EntityMob implements IBossDisplayData, IE
 		}
 	}
     
-    @SuppressWarnings("unchecked")
 	private void applyShieldCollisions(Entity collider) {
         List<Entity> list = this.worldObj.getEntitiesWithinAABBExcludingEntity(collider, collider.boundingBox.expand(-0.2F, -0.2F, -0.2F));
         
@@ -660,7 +659,6 @@ public class EntityTFSnowQueen extends EntityMob implements IBossDisplayData, IE
 
     }
     
-	@SuppressWarnings("unchecked")
 	public int countMyMinions() {
     	// check if there are enough minions.  we check a 32x16x32 area
 		List<EntityTFIceCrystal> nearbyMinons = worldObj.getEntitiesWithinAABB(EntityTFIceCrystal.class, AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(32.0D, 16.0D, 32.0D));

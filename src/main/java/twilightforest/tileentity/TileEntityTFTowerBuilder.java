@@ -123,6 +123,7 @@ public class TileEntityTFTowerBuilder extends TileEntity
 	/**
 	 * Are the specified destination coordinates within our build range?
 	 */
+	@SuppressWarnings("unused")
 	private boolean isInBounds(int nextX, int nextY, int nextZ) 
 	{
 		return nextX > this.xCoord - RANGE && nextX < this.xCoord + RANGE 

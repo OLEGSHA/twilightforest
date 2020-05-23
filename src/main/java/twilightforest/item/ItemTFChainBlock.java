@@ -8,8 +8,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import twilightforest.TwilightForestMod;
 import twilightforest.entity.EntityTFChainBlock;
-import twilightforest.entity.EntityTFCubeOfAnnihilation;
-import twilightforest.entity.EntityTFTwilightWandBolt;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -140,7 +138,7 @@ public class ItemTFChainBlock extends ItemTool {
 	 */
 	public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining) {
 		
-		if (this.doesChainHaveBlock(stack)) {
+		if (ItemTFChainBlock.doesChainHaveBlock(stack)) {
 			return this.itemIcon;
 		} else {
 			return TFItems.knightmetalRing.getIconIndex(stack);

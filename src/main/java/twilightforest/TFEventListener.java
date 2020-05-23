@@ -10,20 +10,15 @@ import net.minecraft.command.CommandGameRule;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.nbt.NBTTagString;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
@@ -32,7 +27,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.common.ISpecialArmor.ArmorProperties;
 import net.minecraftforge.event.CommandEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -49,7 +43,6 @@ import twilightforest.biomes.TFBiomeBase;
 import twilightforest.block.TFBlocks;
 import twilightforest.enchantment.TFEnchantment;
 import twilightforest.entity.EntityTFCharmEffect;
-import twilightforest.entity.EntityTFKobold;
 import twilightforest.entity.EntityTFPinchBeetle;
 import twilightforest.entity.EntityTFYeti;
 import twilightforest.item.TFItems;
@@ -78,6 +71,7 @@ public class TFEventListener {
 	private boolean isBreakingWithGiantPick = false;
 	private boolean shouldMakeGiantCobble = false;
 	private int amountOfCobbleToReplace = 0;
+	@SuppressWarnings("unused")
 	private long lastSpawnedHintMonsterTime;
 
 	/**

@@ -56,8 +56,11 @@ public class ComponentTFMazeEntranceShaft extends StructureTFComponent {
         
         //System.out.println("Drawing entrance");
         
-        int var8 = this.getXWithOffset(0, 0);
+        @SuppressWarnings("unused")
+		int var8 = this.getXWithOffset(0, 0);
+        @SuppressWarnings("unused")
         int var9 = this.getYWithOffset(0);
+        @SuppressWarnings("unused")
         int var10 = this.getZWithOffset(0, 0);
 
         //System.out.println("Drawing entrance at " + var8 + ", " + var9 + ", " + var10);

@@ -16,6 +16,7 @@ import twilightforest.structures.TFMaze;
 
 public class ComponentTFMinotaurMaze extends StructureTFComponent {
 
+	@SuppressWarnings("unused")
 	private static final int FLOOR_LEVEL = 1;
 	TFMaze maze;
 	int rcoords[];
@@ -182,7 +183,7 @@ public class ComponentTFMinotaurMaze extends StructureTFComponent {
 	 * @param random 
 	 * @param list 
 	 */
-	protected void decorateDeadEndsCorridors(Random random, List list)
+	protected void decorateDeadEndsCorridors(Random random, List<StructureTFComponent> list)
 	{
 		for(int x = 0; x < maze.width; x++)
 		{

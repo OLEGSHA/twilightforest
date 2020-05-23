@@ -191,7 +191,6 @@ public class EntityTFGoblinKnightUpper extends EntityMob {
         super.onUpdate();
     }
 	
-    @SuppressWarnings("unchecked")
 	private void landHeavySpearAttack() {
 		
     	

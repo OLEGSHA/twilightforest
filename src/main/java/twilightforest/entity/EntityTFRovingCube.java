@@ -4,7 +4,6 @@ import twilightforest.TwilightForestMod;
 import twilightforest.entity.ai.EntityAICubeCenterOnSymbol;
 import twilightforest.entity.ai.EntityAICubeMoveToRedstoneSymbols;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 

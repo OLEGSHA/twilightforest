@@ -6,14 +6,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 import twilightforest.TwilightForestMod;
-import twilightforest.item.ItemTFMazebreakerPick;
 import twilightforest.item.TFItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -49,7 +45,7 @@ public class BlockTFCastleMagic extends Block {
 	{
 		this.blockIcon = par1IconRegister.registerIcon(TwilightForestMod.ID + ":castleblock_brick");
 		for (int i = 0; i < 8; i++) {
-			this.magicIcons[i] = par1IconRegister.registerIcon(TwilightForestMod.ID + ":castleblock_magic_" + i);
+			BlockTFCastleMagic.magicIcons[i] = par1IconRegister.registerIcon(TwilightForestMod.ID + ":castleblock_magic_" + i);
 		}
 	}
 	
@@ -85,7 +81,6 @@ public class BlockTFCastleMagic extends Block {
 	/**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs, List par3List)
     {

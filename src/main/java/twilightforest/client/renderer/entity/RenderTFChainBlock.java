@@ -10,7 +10,6 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import twilightforest.TwilightForestMod;
-import twilightforest.entity.EntityTFBlockGoblin;
 import twilightforest.entity.EntityTFChainBlock;
 
 public class RenderTFChainBlock extends Render {

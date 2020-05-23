@@ -118,7 +118,6 @@ public class EntityTFHydra extends EntityLiving implements IBossDisplayData, IEn
     }
 	
 	
-	@SuppressWarnings("unchecked")
 	@Override
     public void onLivingUpdate()
     {
@@ -723,7 +722,6 @@ public class EntityTFHydra extends EntityLiving implements IBossDisplayData, IEn
      * 
      * Right now just finds the closest living entity that is not exluded by our criteria
      */
-    @SuppressWarnings("unchecked")
 	public EntityLivingBase findSecondaryTarget(double range)
     {
         double closestRange = -1.0D;

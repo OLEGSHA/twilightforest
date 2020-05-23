@@ -148,7 +148,6 @@ public class EntityTFNagaSegment extends Entity {
 
     }
     
-    @SuppressWarnings("unchecked")
 	protected void collideWithOthers()
     {
         List<Entity> list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));

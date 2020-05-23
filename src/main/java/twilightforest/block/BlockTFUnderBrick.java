@@ -87,7 +87,8 @@ public class BlockTFUnderBrick extends Block {
     @Override
 	public int colorMultiplier(IBlockAccess par1IBlockAccess, int x, int y, int z)
     {
-    	int meta = par1IBlockAccess.getBlockMetadata(x, y, z);
+    	@SuppressWarnings("unused")
+		int meta = par1IBlockAccess.getBlockMetadata(x, y, z);
 
     	return 0xFFFFFF;
     }

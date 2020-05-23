@@ -17,8 +17,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemTFKnightlySword extends ItemSword {
 
+	@SuppressWarnings("unused")
 	private static final int BONUS_DAMAGE = 2;
+	@SuppressWarnings("unused")
 	private Entity bonusDamageEntity;
+	@SuppressWarnings("unused")
 	private EntityPlayer bonusDamagePlayer;
 
 	public ItemTFKnightlySword(Item.ToolMaterial par2EnumToolMaterial) {

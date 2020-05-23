@@ -99,6 +99,7 @@ public class ComponentTFHollowTreeMedBranch extends StructureTFComponent {
 	 */
 	@Override
 	public void buildComponent(StructureComponent structurecomponent, List list, Random rand) {
+		@SuppressWarnings("unused")
 		int index = getComponentType();
 
 //		// with leaves!
@@ -140,7 +141,7 @@ public class ComponentTFHollowTreeMedBranch extends StructureTFComponent {
 //		}
 	}
 	
-	public void makeSmallBranch(List list, Random rand, int index, int x, int y, int z, double branchLength, double branchRotation, double branchAngle, boolean leafy) {
+	public void makeSmallBranch(List<ComponentTFHollowTreeSmallBranch> list, Random rand, int index, int x, int y, int z, double branchLength, double branchRotation, double branchAngle, boolean leafy) {
         ComponentTFHollowTreeSmallBranch branch = new ComponentTFHollowTreeSmallBranch(index, x, y, z, branchLength, branchRotation, branchAngle, leafy);
         list.add(branch);
         branch.buildComponent(this, list, rand);
@@ -166,6 +167,7 @@ public class ComponentTFHollowTreeMedBranch extends StructureTFComponent {
 
 		// and several small branches
 		int numShoots = Math.min(decoRNG.nextInt(3) + 1, (int)(length / 5));
+		@SuppressWarnings("unused")
 		double angleInc, angleVar, outVar, tiltVar;
 
 		angleInc = 0.8 / numShoots;
@@ -177,6 +179,7 @@ public class ComponentTFHollowTreeMedBranch extends StructureTFComponent {
 			tiltVar = (decoRNG.nextDouble() * 0.75) + 0.15;
 
 			ChunkCoordinates bSrc = TFGenerator.translateCoords(rSrc.posX, rSrc.posY, rSrc.posZ, length * outVar, angle, tilt);
+			@SuppressWarnings("unused")
 			double slength = length * 0.4;
 
 			drawSmallBranch(world, sbb, bSrc.posX, bSrc.posY, bSrc.posZ, Math.max(length * 0.3F, 2F), angle + angleVar, tilt, leafy);

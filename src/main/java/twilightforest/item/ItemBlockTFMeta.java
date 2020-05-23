@@ -49,7 +49,6 @@ public class ItemBlockTFMeta extends ItemBlock {
     /**
      * allows items to add custom lines of information to the mouseover description
      */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

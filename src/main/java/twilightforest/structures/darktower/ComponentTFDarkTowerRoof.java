@@ -33,7 +33,6 @@ public class ComponentTFDarkTowerRoof extends ComponentTFTowerRoof
 		this.spawnListIndex = 1;
 	}
 	
-	@SuppressWarnings("rawtypes")
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) 
 	{

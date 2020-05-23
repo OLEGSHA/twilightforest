@@ -149,7 +149,6 @@ import twilightforest.client.renderer.entity.RenderTFUrGhast;
 import twilightforest.client.renderer.entity.RenderTFWinterWolf;
 import twilightforest.client.renderer.entity.RenderTFWraith;
 import twilightforest.client.renderer.entity.RenderTFYeti;
-import twilightforest.entity.EntityTFCubeOfAnnihilation;
 import twilightforest.item.TFItems;
 import twilightforest.tileentity.TileEntityTFCicada;
 import twilightforest.tileentity.TileEntityTFFirefly;

@@ -10,7 +10,6 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
-import twilightforest.TFTreasure;
 import twilightforest.block.TFBlocks;
 import twilightforest.structures.StructureTFComponent;
 
@@ -57,7 +56,6 @@ public class ComponentTFTrollCaveConnect extends ComponentTFTrollCaveMain {
         this.openingTowards[3] = par1NBTTagCompound.getBoolean("openingTowards3");
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		// make 4 caves

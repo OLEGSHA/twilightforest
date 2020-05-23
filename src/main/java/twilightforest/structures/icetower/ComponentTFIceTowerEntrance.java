@@ -23,7 +23,6 @@ public class ComponentTFIceTowerEntrance extends ComponentTFIceTowerWing {
 	}
 	
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		if (parent != null && parent instanceof StructureTFComponent)

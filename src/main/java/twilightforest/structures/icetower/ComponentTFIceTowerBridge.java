@@ -48,7 +48,6 @@ public class ComponentTFIceTowerBridge extends StructureTFComponent {
 	}
 
 
-	@SuppressWarnings({ "rawtypes" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) 
 	{

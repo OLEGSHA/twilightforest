@@ -7,7 +7,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.MathHelper;
@@ -24,7 +23,6 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.internal.FMLProxyPacket;
 
 /**
@@ -116,6 +114,7 @@ public class TFTickHandler
 		ChunkProviderTwilightForest chunkProvider = ((WorldProviderTwilightForest)world.provider).getChunkProvider();
 		
 		int px = MathHelper.floor_double(player.posX);
+		@SuppressWarnings("unused")
 		int py = MathHelper.floor_double(player.posY);
 		int pz = MathHelper.floor_double(player.posZ);
 		
@@ -152,7 +151,6 @@ public class TFTickHandler
 				&& (world.provider.dimensionId == 0 || world.provider.dimensionId == TwilightForestMod.dimensionID 
 				|| TwilightForestMod.allowPortalsInOtherDimensions)) 
 		{
-			@SuppressWarnings("unchecked")
 			List<EntityItem> itemList = world.getEntitiesWithinAABB(EntityItem.class, player.boundingBox.expand(rangeToCheck, rangeToCheck, rangeToCheck));
 			
 			// do we have the item set?  if not, can we set it?

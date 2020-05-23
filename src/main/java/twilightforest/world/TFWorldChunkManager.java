@@ -68,7 +68,6 @@ public class TFWorldChunkManager extends WorldChunkManager
     /**
      * Gets the list of valid biomes for the player to spawn in.
      */
-    @SuppressWarnings("rawtypes")
 	public List getBiomesToSpawnIn()
     {
         return myBiomesToSpawnIn;
@@ -219,7 +218,6 @@ public class TFWorldChunkManager extends WorldChunkManager
     /**
      * checks given Chunk's Biomes against List of allowed ones
      */
-    @SuppressWarnings("rawtypes")
 	public boolean areBiomesViable(int par1, int par2, int par3, List par4List)
     {
         int i = par1 - par3 >> 2;
@@ -246,7 +244,6 @@ public class TFWorldChunkManager extends WorldChunkManager
     /**
      * Finds a valid position within a range, that is once of the listed biomes.
      */
-    @SuppressWarnings("rawtypes")
 	public ChunkPosition findBiomePosition(int par1, int par2, int par3, List par4List, Random par5Random)
     {
         int i = par1 - par3 >> 2;

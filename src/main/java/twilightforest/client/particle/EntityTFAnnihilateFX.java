@@ -4,7 +4,6 @@ import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.World;
 import twilightforest.item.ItemTFCubeOfAnnihilation;
-import twilightforest.item.ItemTFIceBomb;
 import twilightforest.item.TFItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

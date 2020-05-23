@@ -5,14 +5,10 @@ import java.util.HashMap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import twilightforest.TwilightForestMod;
-import twilightforest.entity.EntityTFChainBlock;
 import twilightforest.entity.EntityTFCubeOfAnnihilation;
-import twilightforest.entity.EntityTFTwilightWandBolt;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -120,7 +116,7 @@ public class ItemTFCubeOfAnnihilation extends ItemTF {
 	 */
 	public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining) {
 		
-		if (this.doesTalismanHaveCube(stack)) {
+		if (ItemTFCubeOfAnnihilation.doesTalismanHaveCube(stack)) {
 			return this.itemIcon;
 		} else {
 			return TFItems.cubeTalisman.getIconIndex(stack);

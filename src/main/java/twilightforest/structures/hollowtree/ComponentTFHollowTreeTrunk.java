@@ -94,7 +94,7 @@ public class ComponentTFHollowTreeTrunk extends StructureTFComponent {
 	/**
 	 * Build the crown of the tree
 	 */
-	protected void buildFullCrown(List list, Random rand, int index) {
+	protected void buildFullCrown(List<ComponentTFHollowTreeMedBranch> list, Random rand, int index) {
 		int crownRadius = radius * 4 + 4;
 		int bvar = radius + 2;
 		
@@ -115,7 +115,7 @@ public class ComponentTFHollowTreeTrunk extends StructureTFComponent {
 	 * Build a ring of branches around the tree
 	 * size 0 = small, 1 = med, 2 = large, 3 = root
 	 */
-	protected int buildBranchRing(List list, Random rand, int index, int branchHeight, int heightVar, int length, int lengthVar, double tilt, double tiltVar, int minBranches, int maxBranches, int size, boolean leafy) {
+	protected int buildBranchRing(List<ComponentTFHollowTreeMedBranch> list, Random rand, int index, int branchHeight, int heightVar, int length, int lengthVar, double tilt, double tiltVar, int minBranches, int maxBranches, int size, boolean leafy) {
 		//let's do this!
 		int numBranches = rand.nextInt(maxBranches - minBranches + 1) + minBranches;
 		double branchRotation = 1.0 / numBranches;
@@ -144,21 +144,21 @@ public class ComponentTFHollowTreeTrunk extends StructureTFComponent {
 	}
 
 	
-	public void makeSmallBranch(List list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle, boolean leafy) {
+	public void makeSmallBranch(List<ComponentTFHollowTreeMedBranch> list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle, boolean leafy) {
 		ChunkCoordinates bSrc = getBranchSrc(branchHeight, branchRotation);
         ComponentTFHollowTreeSmallBranch branch = new ComponentTFHollowTreeSmallBranch(index, bSrc.posX, bSrc.posY, bSrc.posZ, branchLength, branchRotation, branchAngle, leafy);
         list.add(branch);
         branch.buildComponent(this, list, rand);
 	}
 
-	public void makeMedBranch(List list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle, boolean leafy) {
+	public void makeMedBranch(List<ComponentTFHollowTreeMedBranch> list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle, boolean leafy) {
 		ChunkCoordinates bSrc = getBranchSrc(branchHeight, branchRotation);
         ComponentTFHollowTreeMedBranch branch = new ComponentTFHollowTreeMedBranch(index, bSrc.posX, bSrc.posY, bSrc.posZ, branchLength, branchRotation, branchAngle, leafy);
         list.add(branch);
         branch.buildComponent(this, list, rand);
 	}
 
-	public void makeLargeBranch(List list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle, boolean leafy) {
+	public void makeLargeBranch(List<ComponentTFHollowTreeMedBranch> list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle, boolean leafy) {
 		ChunkCoordinates bSrc = getBranchSrc(branchHeight, branchRotation);
         ComponentTFHollowTreeMedBranch branch = new ComponentTFHollowTreeLargeBranch(index, bSrc.posX, bSrc.posY, bSrc.posZ, branchLength, branchRotation, branchAngle, leafy);
         list.add(branch);
@@ -166,7 +166,7 @@ public class ComponentTFHollowTreeTrunk extends StructureTFComponent {
 	}
 
 
-	public void makeRoot(List list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle) {
+	public void makeRoot(List<ComponentTFHollowTreeMedBranch> list, Random rand, int index, int branchHeight, int branchLength, double branchRotation, double branchAngle) {
 		ChunkCoordinates bSrc = getBranchSrc(branchHeight, branchRotation);
 	    ComponentTFHollowTreeRoot branch = new ComponentTFHollowTreeRoot(index, bSrc.posX, bSrc.posY, bSrc.posZ, branchLength, branchRotation, branchAngle, false);
 	    list.add(branch);

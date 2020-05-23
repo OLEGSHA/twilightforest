@@ -2,7 +2,6 @@ package twilightforest.entity.ai;
 
 import twilightforest.entity.EntityTFRovingCube;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
@@ -71,7 +70,8 @@ public class EntityAICubeMoveToRedstoneSymbols extends EntityAIBase {
         int curY = MathHelper.floor_double(myCube2.posY);
         int curZ = MathHelper.floor_double(myCube2.posZ);
         
-        boolean foundSymbol = false;
+        @SuppressWarnings("unused")
+		boolean foundSymbol = false;
 		
 		for (int x = curX - xzRange; x < curX + xzRange; x++) {
 			for (int z = curZ - xzRange; z < curZ + xzRange; z++) {

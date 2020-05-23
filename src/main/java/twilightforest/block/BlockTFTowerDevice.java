@@ -54,9 +54,13 @@ public class BlockTFTowerDevice extends Block {
 	private static IIcon TEX_REACTOR_ACTIVE;
 	private static IIcon TEX_GHASTTRAP_LID_INACTIVE;
 	private static IIcon TEX_GHASTTRAP_LID_ACTIVE;
+	@SuppressWarnings("unused")
 	private static IIcon TEX_SMOKER_ACTIVE;
+	@SuppressWarnings("unused")
 	private static IIcon TEX_SMOKER_INACTIVE;
+	@SuppressWarnings("unused")
 	private static IIcon TEX_FIREJET_ACTIVE;
+	@SuppressWarnings("unused")
 	private static IIcon TEX_FIREJET_INACTIVE;
 	
 	public static final int META_REAPPEARING_INACTIVE = 0;

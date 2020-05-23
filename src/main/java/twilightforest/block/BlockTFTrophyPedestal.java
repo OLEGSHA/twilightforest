@@ -32,6 +32,7 @@ public class BlockTFTrophyPedestal extends Block {
 	
 	private IIcon sprTopActive;
 	private IIcon sprTop;
+	@SuppressWarnings("unused")
 	private IIcon sprBottom;
 	private IIcon sprNagaActive;
 	private IIcon sprNaga;
@@ -318,8 +319,7 @@ public class BlockTFTrophyPedestal extends Block {
 			world.playSoundEffect(x + 0.5D, y + 0.5D, z + 0.5D, "mob.zombie.infect", 4.0F, 0.1F);
 	}
 
-    @SuppressWarnings("unchecked")
-	private void rewardNearbyPlayers(World world, int x, int y, int z) {
+    private void rewardNearbyPlayers(World world, int x, int y, int z) {
 		// scan for players nearby to give the achievement
 		List<EntityPlayer> nearbyPlayers = world.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(x, y, z, x + 1, y + 1, z + 1).expand(16.0D, 16.0D, 16.0D));
 		

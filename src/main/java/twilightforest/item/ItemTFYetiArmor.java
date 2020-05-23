@@ -15,7 +15,6 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import twilightforest.TwilightForestMod;
-import twilightforest.enchantment.TFEnchantment;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -63,7 +62,6 @@ public class ItemTFYetiArmor extends ItemArmor {
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
     	ItemStack istack = new ItemStack(par1, 1, 0);

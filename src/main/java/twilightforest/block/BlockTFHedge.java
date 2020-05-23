@@ -182,7 +182,6 @@ public class BlockTFHedge extends BlockLeavesBase {
      * This should be called 5 ticks after we've received a click event from a player.
      * If we see player nearby swinging at a hedge block, prick them
      */
-    @SuppressWarnings("unchecked")
 	@Override
     public void updateTick(World world, int x, int y, int z, Random random)
     {

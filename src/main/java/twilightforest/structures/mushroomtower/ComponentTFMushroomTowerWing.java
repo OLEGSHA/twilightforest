@@ -129,7 +129,7 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 	/**
 	 * Make a new wing
 	 */
-	public boolean makeTowerWing(List list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation) {
+	public boolean makeTowerWing(List<StructureComponent> list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation) {
 
 		int direction = (getCoordBaseMode() + rotation) % 4;
 		int[] dx = offsetTowerCoords(x, y, z, wingSize, direction);
@@ -173,7 +173,7 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 	/**
 	 * Adjust the coordinates for this tower to link up with any others within 3
 	 */
-	protected int[] adjustCoordinates(int x, int y, int z, int wingSize, int direction, List list) {
+	protected int[] adjustCoordinates(int x, int y, int z, int wingSize, int direction, List<StructureComponent> list) {
 		
 		// go through list.  if there are any same size towers within wingSize, return their xyz instead
 		
@@ -211,7 +211,7 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 	/**
 	 * Are there (not) any other towers below this bounding box?
 	 */
-	private boolean isHighest(StructureBoundingBox boundingBox, int size, List list) {
+	private boolean isHighest(StructureBoundingBox boundingBox, int size, List<StructureTFComponent> list) {
 		// go through list.  if there are any same size towers within wingSize, return their xyz instead
 		
 		StructureBoundingBox boxAbove = new StructureBoundingBox(boundingBox);
@@ -240,7 +240,7 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 	 * Make a mushroom roof!
 	 */
 	@Override
-	public void makeARoof(StructureComponent parent, List list, Random rand) {
+	public void makeARoof(StructureComponent parent, List<StructureComponent> list, Random rand) {
 		
 		ComponentTFTowerRoof roof = new ComponentTFTowerRoofMushroom(this.getComponentType() + 1, this, 1.6F);
 		if (StructureComponent.findIntersecting(list, roof.getBoundingBox()) instanceof ComponentTFTowerRoofMushroom)
@@ -267,11 +267,11 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 	}
 
 
-	protected boolean makeBridge(List list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation) {
+	protected boolean makeBridge(List<StructureComponent> list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation) {
 		return this.makeBridge(list, rand, index, x, y, z, wingSize, wingHeight, rotation, false);
 	}
 	
-	protected boolean makeBridge(List list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation, boolean ascender) {
+	protected boolean makeBridge(List<StructureComponent> list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation, boolean ascender) {
 		// bridges are size  always
 		int direction = (getCoordBaseMode() + rotation) % 4;
 		int[] dx = offsetTowerCoords(x, y, z, 3, direction);
@@ -303,7 +303,7 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 		}
 	}
 	
-	private boolean makeMainBridge(List list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation) {
+	private boolean makeMainBridge(List<StructureTFComponent> list, Random rand, int index, int x, int y, int z, int wingSize, int wingHeight, int rotation) {
 
 		int direction = (getCoordBaseMode() + rotation) % 4;
 		int[] dx = offsetTowerCoords(x, y, z, 3, direction);
@@ -439,6 +439,7 @@ public class ComponentTFMushroomTowerWing extends ComponentTFTowerWing
 		int floors = this.height / FLOOR_HEIGHT;
 
 		int ladderDir = 3;
+		@SuppressWarnings("unused")
 		int downLadderDir = -1;
 
 		// divide the tower into floors

@@ -11,15 +11,11 @@ import twilightforest.TwilightForestMod;
 import twilightforest.item.TFItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockPane;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.block.BlockStainedGlassPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -46,13 +42,13 @@ public class BlockTFForceField extends BlockPane {
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {
-        return this.sides[meta % names.length];
+        return BlockTFForceField.sides[meta % names.length];
     }
     
     @SideOnly(Side.CLIENT)
     public IIcon func_150097_e()
     {
-        return this.top;
+        return BlockTFForceField.top;
     }
 
 	
@@ -61,13 +57,13 @@ public class BlockTFForceField extends BlockPane {
     {
         super.registerBlockIcons(register);
         
-        this.sides = new IIcon[names.length];
+        BlockTFForceField.sides = new IIcon[names.length];
         
         for (int i = 0; i < names.length; i++) {
-            this.sides[i] = register.registerIcon(TwilightForestMod.ID + ":forcefield_" + names[i]);
+            BlockTFForceField.sides[i] = register.registerIcon(TwilightForestMod.ID + ":forcefield_" + names[i]);
         }
         
-        this.top = register.registerIcon(TwilightForestMod.ID + ":forcefield_top");
+        BlockTFForceField.top = register.registerIcon(TwilightForestMod.ID + ":forcefield_top");
 
     }
     
@@ -91,7 +87,6 @@ public class BlockTFForceField extends BlockPane {
 	/**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs, List par3List)
     {

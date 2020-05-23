@@ -1,11 +1,7 @@
 package twilightforest;
 
-import com.google.common.base.Function;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDispenser;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.entity.Entity;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,39 +12,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import twilightforest.biomes.TFBiomeBase;
-import twilightforest.block.BlockTFAuroraBrick;
-import twilightforest.block.BlockTFAuroraPillar;
-import twilightforest.block.BlockTFAuroraSlab;
-import twilightforest.block.BlockTFBurntThorns;
-import twilightforest.block.BlockTFCastleBlock;
-import twilightforest.block.BlockTFCastleMagic;
-import twilightforest.block.BlockTFDarkLeaves;
-import twilightforest.block.BlockTFDeadrock;
-import twilightforest.block.BlockTFFluffyCloud;
-import twilightforest.block.BlockTFForceField;
-import twilightforest.block.BlockTFGiantCobble;
-import twilightforest.block.BlockTFGiantLeaves;
-import twilightforest.block.BlockTFGiantLog;
-import twilightforest.block.BlockTFGiantObsidian;
-import twilightforest.block.BlockTFHugeGloomBlock;
-import twilightforest.block.BlockTFHugeLilyPad;
-import twilightforest.block.BlockTFHugeStalk;
-import twilightforest.block.BlockTFHugeWaterLily;
-import twilightforest.block.BlockTFKnightmetalBlock;
-import twilightforest.block.BlockTFLeaves3;
-import twilightforest.block.BlockTFRipeTorchCluster;
-import twilightforest.block.BlockTFShield;
-import twilightforest.block.BlockTFSlider;
-import twilightforest.block.BlockTFThornRose;
-import twilightforest.block.BlockTFThorns;
-import twilightforest.block.BlockTFTrollRoot;
-import twilightforest.block.BlockTFTrollSteinn;
-import twilightforest.block.BlockTFTrophy;
-import twilightforest.block.BlockTFTrophyPedestal;
-import twilightforest.block.BlockTFUberousSoil;
-import twilightforest.block.BlockTFUnderBrick;
-import twilightforest.block.BlockTFUnripeTorchCluster;
-import twilightforest.block.BlockTFWispyCloud;
 import twilightforest.block.TFBlocks;
 import twilightforest.entity.TFCreatures;
 import twilightforest.item.BehaviorTFMobEggDispense;
@@ -81,7 +44,6 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.ModContainer;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
@@ -91,10 +53,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.FMLEventChannel;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.network.internal.FMLMessage.EntitySpawnMessage;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry.EntityRegistration;
 import thaumcraft.api.*;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -103,7 +63,7 @@ import thaumcraft.api.aspects.AspectList;
 public class TwilightForestMod {
 	
 	public static final String ID = "TwilightForest";
-	public static final String VERSION = "2.3.8dev";
+	public static final String VERSION = "2.3.8dev-PIWCS1";
 	
 	public static final String MODEL_DIR = "twilightforest:textures/model/";
 	public static final String GUI_DIR = "twilightforest:textures/gui/";
@@ -462,8 +422,8 @@ public class TwilightForestMod {
 		EntityRegistry.registerModEntity(twilightforest.entity.EntitySeekerArrow.class, "tfSeekerArrow", idVehicleSpawnSeekerArrow, this, 150, 1, true);
 		EntityRegistry.registerModEntity(twilightforest.entity.EntityTFIceSnowball.class, "tficesnowball", idVehicleSpawnIceSnowball, this, 150, 3, true);
 		EntityRegistry.registerModEntity(twilightforest.entity.EntityTFChainBlock.class, "tfchainBlock", idVehicleSpawnChainBlock, this, 80, 1, true);
-		EntityRegistry.registerModEntity(twilightforest.entity.EntityTFCubeOfAnnihilation.class, "tfcubeannihilation", this.idVehicleSpawnCubeOfAnnihilation, this, 80, 1, true);
-		EntityRegistry.registerModEntity(twilightforest.entity.EntityTFSlideBlock.class, "tfslideblock", this.idVehicleSpawnSlideBlock, this, 80, 1, true);
+		EntityRegistry.registerModEntity(twilightforest.entity.EntityTFCubeOfAnnihilation.class, "tfcubeannihilation", TwilightForestMod.idVehicleSpawnCubeOfAnnihilation, this, 80, 1, true);
+		EntityRegistry.registerModEntity(twilightforest.entity.EntityTFSlideBlock.class, "tfslideblock", TwilightForestMod.idVehicleSpawnSlideBlock, this, 80, 1, true);
 
 	}
 	

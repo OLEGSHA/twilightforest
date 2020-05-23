@@ -35,7 +35,6 @@ public class TFBiomeDarkForest extends TFBiomeBase {
 	Random monsterRNG;
 	ArrayList<SpawnListEntry> emptyList = new ArrayList<SpawnListEntry>();
 
-	@SuppressWarnings("unchecked")
 	public TFBiomeDarkForest(int i) {
 		super(i);
 		
@@ -122,7 +121,6 @@ public class TFBiomeDarkForest extends TFBiomeBase {
     /**
      * Returns the correspondent list of the EnumCreatureType informed.
      */
-    @SuppressWarnings("rawtypes")
 	@Override
     public List getSpawnableList(EnumCreatureType par1EnumCreatureType)
     {

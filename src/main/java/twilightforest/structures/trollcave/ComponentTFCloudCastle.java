@@ -58,7 +58,6 @@ public class ComponentTFCloudCastle extends StructureTFComponent {
 	}
 
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		// up to two trees

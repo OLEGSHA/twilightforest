@@ -69,7 +69,6 @@ public class ComponentTFTrollCaveMain extends StructureTFComponent {
         this.height = par1NBTTagCompound.getInteger("height");
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		// make 4 caves

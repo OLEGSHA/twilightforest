@@ -779,7 +779,6 @@ public class HydraHeadContainer {
 	/**
 	 * Execute whatever effect we need.  Deal damage with the bite, the breath weapon, or launch mortars when appropriate
 	 */
-	@SuppressWarnings("unchecked")
 	protected void executeAttacks()
 	{
 		if (this.currentState == HydraHeadContainer.STATE_MORTAR_LAUNCH && this.ticksProgress % 10 == 0)
@@ -871,7 +870,6 @@ public class HydraHeadContainer {
 	/**
 	 * What, if anything, is the head currently looking at?
 	 */
-	@SuppressWarnings("unchecked")
 	private Entity getHeadLookTarget() {
 		Entity pointedEntity = null;
 		double range = 30.0D;
@@ -932,7 +930,6 @@ public class HydraHeadContainer {
 	/**
 	 * Search for nearby heads with the string as their name
 	 */
-	@SuppressWarnings("unchecked")
 	private EntityTFHydraHead findNearbyHead(String string)
 	{
 		

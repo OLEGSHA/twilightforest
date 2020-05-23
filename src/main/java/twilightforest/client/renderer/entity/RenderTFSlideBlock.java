@@ -5,8 +5,6 @@ import org.lwjgl.opengl.GL11;
 import twilightforest.block.BlockTFSlider;
 import twilightforest.entity.EntityTFSlideBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockAnvil;
-import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
@@ -58,7 +56,8 @@ public class RenderTFSlideBlock extends Render {
             
             this.bindEntityTexture(entity);
             GL11.glDisable(GL11.GL_LIGHTING);
-            Tessellator tessellator;
+            @SuppressWarnings("unused")
+			Tessellator tessellator;
 
             ((BlockTFSlider) block).setBlockBoundsBasedOnMeta(meta);
             

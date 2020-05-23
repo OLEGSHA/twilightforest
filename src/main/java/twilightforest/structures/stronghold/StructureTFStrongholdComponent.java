@@ -101,7 +101,6 @@ public abstract class StructureTFStrongholdComponent extends StructureTFComponen
         }
     }
     
-	@SuppressWarnings("rawtypes")
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) 
 	{

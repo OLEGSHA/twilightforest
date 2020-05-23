@@ -126,8 +126,7 @@ public class ComponentTFTowerWing extends StructureTFComponent {
 			this.openings.add(door);
 		}
 	}
-
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		// we should have a door where we started
@@ -2191,7 +2190,6 @@ public class ComponentTFTowerWing extends StructureTFComponent {
 	/**
 	 * This is similar to EntityPainting.isOnValidSurface, except that it does not check for a solid wall behind the painting.
 	 */
-	@SuppressWarnings("unchecked")
 	protected boolean checkPainting(World world, EntityPainting painting, StructureBoundingBox sbb) {
 		
 		if (painting == null) {

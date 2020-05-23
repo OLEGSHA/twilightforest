@@ -3,14 +3,14 @@ package twilightforest.world;
 import java.util.Random;
 
 import twilightforest.block.TFBlocks;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 
 
 
 public class TFGenLampposts extends TFGenerator {
-    private static final int MAX_HANG = 8;
+    @SuppressWarnings("unused")
+	private static final int MAX_HANG = 8;
 
 	public boolean generate(World world, Random rand, int x, int y, int z) {
 		// we should start on a grass block

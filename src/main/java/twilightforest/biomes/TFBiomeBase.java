@@ -20,9 +20,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.StatFileWriter;
 import net.minecraft.stats.StatisticsFile;
-import net.minecraft.util.MathHelper;
-import net.minecraft.world.ColorizerFoliage;
-import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -38,8 +35,6 @@ import twilightforest.TwilightForestMod;
 import twilightforest.entity.EntityTFKobold;
 import twilightforest.entity.passive.EntityTFMobileFirefly;
 import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 
 public abstract class TFBiomeBase extends BiomeGenBase  {
@@ -78,7 +73,6 @@ public abstract class TFBiomeBase extends BiomeGenBase  {
      */
     protected List<SpawnListEntry> undergroundMonsterList;
 
-	@SuppressWarnings("unchecked")
 	public TFBiomeBase(int i) 
 	{
 		super(i);

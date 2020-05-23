@@ -111,7 +111,6 @@ public class BlockTFLeaves3 extends BlockLeaves {
 	/**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
     public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs, List par3List)
     {

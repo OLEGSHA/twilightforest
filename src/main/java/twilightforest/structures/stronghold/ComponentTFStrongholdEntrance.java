@@ -70,10 +70,15 @@ public class ComponentTFStrongholdEntrance extends StructureTFStrongholdComponen
 		List<StructureTFStrongholdComponent> pieceList = (List<StructureTFStrongholdComponent>)list;
 		StructureBoundingBox shieldBox = new StructureBoundingBox(this.boundingBox);
 		
+		@SuppressWarnings("unused")
 		int tStairs = 0;
+		@SuppressWarnings("unused")
 		int tCorridors = 0;
+		@SuppressWarnings("unused")
 		int deadEnd = 0;
+		@SuppressWarnings("unused")
 		int tRooms = 0;
+		@SuppressWarnings("unused")
 		int bossRooms = 0;
 		
 		// compute and generate MEGASHIELD
@@ -120,8 +125,8 @@ public class ComponentTFStrongholdEntrance extends StructureTFStrongholdComponen
 
 	}
 
-	private boolean listContainsBossRoom(List list) {
-		for (StructureTFStrongholdComponent component : (List<StructureTFStrongholdComponent>)list)
+	private boolean listContainsBossRoom(List<StructureTFStrongholdComponent> list) {
+		for (StructureTFStrongholdComponent component : list)
 		{
 			if (component instanceof ComponentTFStrongholdBossRoom)
 			{
@@ -147,8 +152,11 @@ public class ComponentTFStrongholdEntrance extends StructureTFStrongholdComponen
 	public boolean addComponentParts(World world, Random rand, StructureBoundingBox sbb) {
 		placeStrongholdWalls(world, sbb, 0, 0, 0, 17, 6, 17, rand, deco.randomBlocks);
 
+		@SuppressWarnings("unused")
 		int var8 = this.getXWithOffset(0, 0);
+		@SuppressWarnings("unused")
 		int var9 = this.getYWithOffset(0);
+		@SuppressWarnings("unused")
 		int var10 = this.getZWithOffset(0, 0);
 
 		//System.out.println("Drawing STRONGHOLD entrance at " + var8 + ", " + var9 + ", " + var10);

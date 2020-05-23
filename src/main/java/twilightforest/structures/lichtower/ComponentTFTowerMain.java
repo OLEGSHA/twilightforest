@@ -26,7 +26,6 @@ public class ComponentTFTowerMain extends ComponentTFTowerWing {
 		super(index, x, y, z, 15, 55 + rand.nextInt(32), 0);
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		// add a roof?

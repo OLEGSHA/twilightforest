@@ -1,23 +1,15 @@
 package twilightforest.client.renderer.entity;
 
-import java.util.UUID;
-
 import org.lwjgl.opengl.GL11;
-
-import com.mojang.authlib.GameProfile;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTUtil;
-import net.minecraft.util.StringUtils;
 
 public class RenderTFKobold extends RenderTFBiped {
 
@@ -31,7 +23,8 @@ public class RenderTFKobold extends RenderTFBiped {
         GL11.glColor3f(1.0F, 1.0F, 1.0F);
         //super.renderEquippedItems(p_77029_1_, p_77029_2_);
         ItemStack itemstack = p_77029_1_.getHeldItem();
-        ItemStack itemstack1 = p_77029_1_.func_130225_q(3);
+        @SuppressWarnings("unused")
+		ItemStack itemstack1 = p_77029_1_.func_130225_q(3);
         Item item;
         float f1;
         

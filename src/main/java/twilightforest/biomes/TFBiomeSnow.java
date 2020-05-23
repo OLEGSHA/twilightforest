@@ -37,7 +37,6 @@ public class TFBiomeSnow extends TFBiomeBase {
 	/**
 	 * @param i
 	 */
-	@SuppressWarnings("unchecked")
 	public TFBiomeSnow(int i) {
 		super(i);
 		
@@ -89,7 +88,6 @@ public class TFBiomeSnow extends TFBiomeBase {
     /**
      * Returns the correspondent list of the EnumCreatureType informed.
      */
-    @SuppressWarnings("rawtypes")
 	@Override
     public List getSpawnableList(EnumCreatureType par1EnumCreatureType)
     {

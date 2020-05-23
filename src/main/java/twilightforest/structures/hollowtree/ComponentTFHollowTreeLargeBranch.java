@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import twilightforest.block.TFBlocks;
+import twilightforest.structures.StructureTFComponent;
 import twilightforest.world.TFGenerator;
 
 
@@ -65,13 +66,13 @@ public class ComponentTFHollowTreeLargeBranch extends ComponentTFHollowTreeMedBr
 
 	}
 	
-	public void makeLeafDungeon(List list, Random rand, int index, int x, int y, int z) {
+	public void makeLeafDungeon(List<StructureTFComponent> list, Random rand, int index, int x, int y, int z) {
         ComponentTFHollowTreeLeafDungeon dungeon = new ComponentTFHollowTreeLeafDungeon(index, x, y, z, 4);
         list.add(dungeon);
         dungeon.buildComponent(this, list, rand);
 	}
 	
-	public void makeMedBranch(List list, Random rand, int index, int x, int y, int z, double branchLength, double branchRotation, double branchAngle, boolean leafy) {
+	public void makeMedBranch(List<StructureTFComponent> list, Random rand, int index, int x, int y, int z, double branchLength, double branchRotation, double branchAngle, boolean leafy) {
         ComponentTFHollowTreeMedBranch branch = new ComponentTFHollowTreeMedBranch(index, x, y, z, branchLength, branchRotation, branchAngle, leafy);
         list.add(branch);
         branch.buildComponent(this, list, rand);

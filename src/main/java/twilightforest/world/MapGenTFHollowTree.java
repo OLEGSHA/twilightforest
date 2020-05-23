@@ -13,13 +13,10 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ReportedException;
 import net.minecraft.world.ChunkCoordIntPair;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
-import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
 import twilightforest.TFFeature;
 import twilightforest.TwilightForestMod;
@@ -52,21 +49,24 @@ public class MapGenTFHollowTree extends MapGenBase {
             } catch (Throwable throwable) {
                 CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Exception preparing hollow tree");
                 CrashReportCategory crashreportcategory = crashreport.makeCategory("Feature being prepared");
-                crashreportcategory.addCrashSectionCallable("Is feature chunk", new Callable() {
-                    private static final String __OBFID = "CL_00000506";
+                crashreportcategory.addCrashSectionCallable("Is feature chunk", new Callable<Object>() {
+                    @SuppressWarnings("unused")
+					private static final String __OBFID = "CL_00000506";
                     public String call() {
                         return MapGenTFHollowTree.this.canSpawnStructureAtCoords(chunkX, chunkZ) ? "True" : "False";
                     }
                 });
                 crashreportcategory.addCrashSection("Chunk location", String.format("%d,%d", new Object[] {Integer.valueOf(chunkX), Integer.valueOf(chunkZ)}));
-                crashreportcategory.addCrashSectionCallable("Chunk pos hash", new Callable() {
-                    private static final String __OBFID = "CL_00000507";
+                crashreportcategory.addCrashSectionCallable("Chunk pos hash", new Callable<Object>() {
+                    @SuppressWarnings("unused")
+					private static final String __OBFID = "CL_00000507";
                     public String call() {
                         return String.valueOf(ChunkCoordIntPair.chunkXZ2Int(chunkX, chunkZ));
                     }
                 });
-                crashreportcategory.addCrashSectionCallable("Structure type", new Callable() {
-                    private static final String __OBFID = "CL_00000508";
+                crashreportcategory.addCrashSectionCallable("Structure type", new Callable<Object>() {
+                    @SuppressWarnings("unused")
+					private static final String __OBFID = "CL_00000508";
                     public String call() {
                         return MapGenTFHollowTree.this.getClass().getCanonicalName();
                     }

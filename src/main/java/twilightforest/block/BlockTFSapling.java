@@ -176,7 +176,6 @@ public class BlockTFSapling extends BlockSapling
         return par1;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	@SideOnly(Side.CLIENT)
 

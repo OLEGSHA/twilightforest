@@ -4,14 +4,11 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import twilightforest.TFTreasure;
 import twilightforest.block.TFBlocks;
-import twilightforest.entity.EntityTFArmoredGiant;
-import twilightforest.entity.EntityTFGiantMiner;
 import twilightforest.structures.StructureTFComponent;
 
 public class ComponentTFTrollVault extends StructureTFComponent {
@@ -35,7 +32,6 @@ public class ComponentTFTrollVault extends StructureTFComponent {
 	}
 	
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) {
 		;

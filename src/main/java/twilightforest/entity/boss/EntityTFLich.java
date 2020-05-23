@@ -548,7 +548,6 @@ public class EntityTFLich extends EntityMob implements IBossDisplayData {
     /**
      * Check the surrounding area for weaker monsters, and if we find any, magically destroy them.
      */
-    @SuppressWarnings("unchecked")
 	protected void popNearbyMob() {
 		List<Entity> nearbyMobs = worldObj.getEntitiesWithinAABBExcludingEntity(this, AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(32.0D, 16.0D, 32.0D));
 
@@ -602,7 +601,6 @@ public class EntityTFLich extends EntityMob implements IBossDisplayData {
     	}
 	}
     
-	@SuppressWarnings("unchecked")
 	protected int countMyClones() {
     	// check if there are enough clones.  we check a 32x16x32 area
 		List<EntityTFLich> nearbyLiches = worldObj.getEntitiesWithinAABB(EntityTFLich.class, AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(32.0D, 16.0D, 32.0D));
@@ -644,7 +642,6 @@ public class EntityTFLich extends EntityMob implements IBossDisplayData {
 	/**
 	 * Despawn neaby clones
 	 */
-	@SuppressWarnings("unchecked")
 	protected void despawnClones() {
 		List<EntityTFLich> nearbyLiches = worldObj.getEntitiesWithinAABB(this.getClass(), AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(32.0D, 16.0D, 32.0D));
 		
@@ -670,7 +667,6 @@ public class EntityTFLich extends EntityMob implements IBossDisplayData {
 		// if there's no minions left to summon, we should move into phase 3 naturally
 	}
 	
-	@SuppressWarnings("unchecked")
 	protected int countMyMinions() {
     	// check if there are enough clones.  we check a 32x16x32 area
 		List<EntityTFLichMinion> nearbyMinons = worldObj.getEntitiesWithinAABB(EntityTFLichMinion.class, AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(32.0D, 16.0D, 32.0D));
@@ -730,7 +726,6 @@ public class EntityTFLich extends EntityMob implements IBossDisplayData {
 	/**
 	 * Find a new master for this clone
 	 */
-	@SuppressWarnings("unchecked")
 	private void findNewMaster() {
 		List<EntityTFLich> nearbyLiches = worldObj.getEntitiesWithinAABB(EntityTFLich.class, AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(32.0D, 16.0D, 32.0D));
 		

@@ -44,7 +44,7 @@ public class BlockTFDeadrock extends Block {
     @Override
 	public IIcon getIcon(int side, int meta)
     {
-    	if (meta > this.names.length) {
+    	if (meta > BlockTFDeadrock.names.length) {
     		meta = 0;
     	}
     	

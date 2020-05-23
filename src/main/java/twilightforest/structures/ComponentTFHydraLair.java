@@ -23,7 +23,6 @@ public class ComponentTFHydraLair extends ComponentTFHollowHill {
 	/**
 	 * Add on any other components we need.  Override with noop since we don't need a maze
 	 */
-	@SuppressWarnings("rawtypes")
 	@Override
 	public void buildComponent(StructureComponent structurecomponent, List list, Random random) {
 		;

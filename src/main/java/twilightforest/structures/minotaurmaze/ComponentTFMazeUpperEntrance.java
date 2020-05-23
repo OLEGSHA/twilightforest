@@ -12,6 +12,7 @@ import twilightforest.structures.StructureTFComponent;
 
 public class ComponentTFMazeUpperEntrance extends StructureTFComponent {
 
+	@SuppressWarnings("unused")
 	private int averageGroundLevel = -1;
 
 

@@ -97,7 +97,6 @@ public class ItemTFTwilightWand extends ItemTF {
     /**
      * Display charges left in tooltip
      */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {

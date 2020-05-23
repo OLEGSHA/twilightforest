@@ -3,7 +3,6 @@ package twilightforest;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.EntityDiggingFX;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;

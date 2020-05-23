@@ -68,7 +68,7 @@ public class ComponentTFDarkTowerMain extends ComponentTFDarkTowerWing
 	}
 
 
-	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	@SuppressWarnings({ "unused" })
 	@Override
 	public void buildComponent(StructureComponent parent, List list, Random rand) 
 	{

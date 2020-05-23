@@ -43,7 +43,6 @@ public class TFBiomeSwamp extends TFBiomeBase {
 
 
 
-	@SuppressWarnings("unchecked")
 	public TFBiomeSwamp(int i) {
 		super(i);
 		
@@ -157,7 +156,6 @@ public class TFBiomeSwamp extends TFBiomeBase {
     /**
      * Returns the correspondent list of the EnumCreatureType informed.
      */
-    @SuppressWarnings("rawtypes")
 	@Override
     public List getSpawnableList(EnumCreatureType par1EnumCreatureType)
     {

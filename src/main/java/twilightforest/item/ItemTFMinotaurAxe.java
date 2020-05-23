@@ -119,7 +119,7 @@ public class ItemTFMinotaurAxe extends ItemAxe {
      */
     public Multimap getItemAttributeModifiers()
     {
-        Multimap multimap = super.getItemAttributeModifiers();
+        Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers();
         // remove old damage value
         multimap.removeAll(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName());
         // add new one

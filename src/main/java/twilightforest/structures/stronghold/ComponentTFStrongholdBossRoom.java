@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
@@ -95,9 +94,12 @@ public class ComponentTFStrongholdBossRoom extends StructureTFStrongholdComponen
 		// doorway
 		this.fillWithAir(world, sbb, 12, 1, 1, 14, 4, 2);
 		this.fillWithBlocks(world, sbb, 12, 1, 3, 14, 4, 3, Blocks.iron_bars, Blocks.iron_bars, false);
-		
+
+        @SuppressWarnings("unused")
 		int var8 = this.getXWithOffset(0, 0);
+        @SuppressWarnings("unused")
 		int var9 = this.getYWithOffset(0);
+        @SuppressWarnings("unused")
 		int var10 = this.getZWithOffset(0, 0);
 
 		//System.out.println("Drawing stronghold boss room at " + var8 + ", " + var9 + ", " + var10);

@@ -1,6 +1,9 @@
 buildscript {
     repositories {
-        mavenCentral()
+        //mavenCentral()
+		maven {
+            url = "https://repo1.maven.org/maven2/"
+        }
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -17,7 +20,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "2.3.8dev"
+version = "2.3.8dev-PIWCS1"
 group= "twilightforest" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "twilightforest-1.7.10"
 
