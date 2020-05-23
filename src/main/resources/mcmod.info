@@ -8,9 +8,10 @@
   "url": "http://www.minecraftforum.net/topic/561673-",
   "updateUrl": "",
   "authors": [
-    "Benimatic (Ben Mazur)"
+    "Benimatic (Ben Mazur)",
+    "OLEGSHA"
   ],
-  "credits": "By Benimatic",
+  "credits": "By Benimatic, minor edits by OLEGSHA",
   "logoFile": "assets/twilightforest/textures/twilightforest_logo.png",
   "screenshots": [],
   "dependencies": []
