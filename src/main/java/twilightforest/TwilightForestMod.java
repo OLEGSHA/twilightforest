@@ -19,6 +19,7 @@ import twilightforest.item.ItemTFMagicMap;
 import twilightforest.item.ItemTFMazeMap;
 import twilightforest.item.TFItems;
 import twilightforest.item.TFRecipes;
+import twilightforest.piwcs.PIWCSIntegrations;
 import twilightforest.structures.StructureTFMajorFeatureStart;
 import twilightforest.tileentity.TileEntityTFCReactorActive;
 import twilightforest.tileentity.TileEntityTFCicada;
@@ -326,6 +327,8 @@ public class TwilightForestMod {
 		{
 			FMLLog.info("[TwilightForest] Did not find Thaumcraft, did not load ThaumcraftApi integration.");
 		}
+		
+		PIWCSIntegrations.setup();
 		
 		// final check for biome ID conflicts
 		TwilightForestMod.hasBiomeIdConflicts = TFBiomeBase.areThereBiomeIdConflicts();

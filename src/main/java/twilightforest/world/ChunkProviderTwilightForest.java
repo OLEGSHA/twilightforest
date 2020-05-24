@@ -31,6 +31,7 @@ import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import twilightforest.TFFeature;
 import twilightforest.biomes.TFBiomeBase;
 import twilightforest.block.TFBlocks;
+import twilightforest.piwcs.MineraGenesisIntegration;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 
 // Referenced classes of package net.minecraft.src:
@@ -991,6 +992,8 @@ public class ChunkProviderTwilightForest implements IChunkProvider {
 				}
 			}
 		}
+		
+		MineraGenesisIntegration.requestChunkProcessing(worldObj, chunkX, chunkZ);
 
 		BlockFalling.fallInstantly = false;
 
