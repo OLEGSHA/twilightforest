@@ -7,6 +7,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import twilightforest.block.BlockTFRoots;
 import twilightforest.block.TFBlocks;
+import twilightforest.piwcs.HarvestCraftIntegration;
 
 public abstract class TFTreeGenerator extends WorldGenAbstractTree {
 
@@ -17,6 +18,8 @@ public abstract class TFTreeGenerator extends WorldGenAbstractTree {
 	protected int leafMeta = 1;
 	protected Block rootBlock = TFBlocks.root;
 	protected int rootMeta = BlockTFRoots.ROOT_META;
+	
+	protected boolean canContainHarvestcraftBeehives = false;
 
 
 	public TFTreeGenerator() {
@@ -249,7 +252,67 @@ public abstract class TFTreeGenerator extends WorldGenAbstractTree {
 
         if (block == null || block.canBeReplacedByLeaves(world, x, y, z))
         {
+    		if (tryToPutHarvestCraftBeehive(world, x, y, z)) {
+    			return;
+    		}
+        	
             this.setBlockAndMetadata(world, x, y, z, blockValue, metaValue);
         }
+	}
+
+	/**
+	 * Attempts to put a HarvestCraft beehive at the specified location.
+	 * 
+	 * @param world the world to act in
+	 * @param x the X coordinate
+	 * @param y the Y coordinate
+	 * @param z the Z coordinate
+	 * 
+	 * @return {@code true} iff the beehive has been placed
+	 * 
+	 * @author PIWCS
+	 */
+	private boolean tryToPutHarvestCraftBeehive(World world, int x, int y, int z) {
+		if (!HarvestCraftIntegration.isIntegrationAvailable()) {
+			return false; // duh
+		}
+		
+		if (!canContainHarvestcraftBeehives) {
+			return false; // duuuh
+		}
+		
+		// Exponential quantifier of beehive frequency. They will occur approximately every 2^periodPower blocks.
+		final int periodPower = 11;
+		
+		final int aRandomPrime       = 31;
+		final int anotherRandomPrime = 43;
+		
+		// Primes + XOR make good hashes, right?
+		int coordinateHash = x ^ (y * aRandomPrime) ^ (z * anotherRandomPrime);
+		
+		if ((coordinateHash & ((2 << periodPower) - 1)) == 0) {
+			doPutHarvestCraftBeehive(world, x, y, z);
+			return true;
+		}
+
+		return false;
+			
+	}
+
+	/**
+	 * Puts a HarvestCraft beehive at the specified location.
+	 * 
+	 * @param world the world to act in
+	 * @param x the X coordinate
+	 * @param y the Y coordinate
+	 * @param z the Z coordinate
+	 * 
+	 * @author PIWCS
+	 */
+	/*
+	 * This is a separate method because hilarious hijinks may insue at any moment suddenly requiring a truckload of hacks 
+	 */
+	private void doPutHarvestCraftBeehive(World world, int x, int y, int z) {
+		setBlockAndMetadata(world, x, y, z, HarvestCraftIntegration.getBeehiveBlock(), HarvestCraftIntegration.getBeehiveBlockMetaValue());
 	}
 }

@@ -40,6 +40,8 @@ public class TFGenCanopyTree extends TFTreeGenerator {
     	rootBlock = TFBlocks.root;
     	rootMeta = BlockTFRoots.ROOT_META;
     	
+    	canContainHarvestcraftBeehives = true;
+    	
     }
     
 	@Override

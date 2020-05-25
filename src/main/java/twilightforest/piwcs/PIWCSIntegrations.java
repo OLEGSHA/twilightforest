@@ -14,6 +14,13 @@ public class PIWCSIntegrations {
 			return;
 		}
 		
+		if (Loader.isModLoaded("harvestcraft")) {
+			HarvestCraftIntegration.setup();
+		} else {
+			FMLLog.info("[TwilightForest] Did not find Pam's HarvestCraft, did not load Pam's HarvestCraft integration.");
+			return;
+		}
+		
 	}
 
 }

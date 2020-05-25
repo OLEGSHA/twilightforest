@@ -32,6 +32,9 @@ public class TFGenMangroveTree extends TFTreeGenerator {
     	leafMeta = 2;
     	rootBlock = TFBlocks.root;
     	rootMeta = BlockTFRoots.ROOT_META;
+    	
+    	canContainHarvestcraftBeehives = true;
+    	
     }
 	
 	@Override

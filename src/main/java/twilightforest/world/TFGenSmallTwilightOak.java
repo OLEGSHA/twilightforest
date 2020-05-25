@@ -30,6 +30,9 @@ public class TFGenSmallTwilightOak extends TFTreeGenerator
     	leafMeta = 0;
     	rootBlock = TFBlocks.root;
     	rootMeta = BlockTFRoots.ROOT_META;
+    	
+    	canContainHarvestcraftBeehives = true;
+    	
     }
 
     public boolean generate(World par1World, Random par2Random, int x, int y, int z)

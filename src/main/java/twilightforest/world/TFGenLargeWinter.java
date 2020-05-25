@@ -26,6 +26,8 @@ public class TFGenLargeWinter extends TFTreeGenerator {
     	rootBlock = TFBlocks.root;
     	rootMeta = BlockTFRoots.ROOT_META;
     	
+    	canContainHarvestcraftBeehives = true;
+    	
     }
 
 	@Override

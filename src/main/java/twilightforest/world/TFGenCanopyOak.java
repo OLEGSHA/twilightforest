@@ -26,6 +26,8 @@ public class TFGenCanopyOak extends TFGenCanopyTree {
     	this.rootBlock = TFBlocks.root;
     	this.rootMeta = BlockTFRoots.ROOT_META;
     	
+    	canContainHarvestcraftBeehives = true;
+    	
     }
     
 	@Override
