@@ -21,6 +21,13 @@ public class PIWCSIntegrations {
 			return;
 		}
 		
+		if (Loader.isModLoaded("Mariculture")) {
+			MaricultureIntegration.setup();
+		} else {
+			FMLLog.info("[TwilightForest] Did not find Mariculture, did not load Mariculture integration.");
+			return;
+		}
+		
 	}
 
 }

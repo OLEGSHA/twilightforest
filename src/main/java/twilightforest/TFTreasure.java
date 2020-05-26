@@ -11,6 +11,7 @@ import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.world.World;
 import twilightforest.block.TFBlocks;
 import twilightforest.item.TFItems;
+import twilightforest.piwcs.MaricultureIntegration;
 
 
 public class TFTreasure {
@@ -141,7 +142,11 @@ public class TFTreasure {
 		{
 			return ultrarare.getRandomItem(rand);
 		}
-		else 
+		else if (MaricultureIntegration.isIntegrationAvailable() && rand.nextInt(16) == 0)
+		{
+			return MaricultureIntegration.getSpiderfishTreasure();
+		}
+		else
 		{
 			return rare.getRandomItem(rand);
 		}
